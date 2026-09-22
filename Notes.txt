@@ -1,0 +1,73 @@
+Day 1
+
+IP-10.52.1.10
+SN-255.255.255.0
+
+DNS-127.0.0.1
+
+~~
+!@Fortinet
+
+config system global
+set hostname FW-EDGE-52
+end
+
+config system admin
+edit rivan
+set accprofile super_admin
+set vdom root
+set password pass
+next
+
+~~
+
+IP Phones
+
+1. PoE
+2. MAC Address (show mac address-table)
+3. IP Address (DHCP Server)
+4. UDP 69 (tftp), TCO 2000 (skinny), TCP 5060 (SIP)
+5. UDP RTP
+6. Codec g711, g729 | h323 video
+7. CME
+
+~~~~~~
+
+Switch
+
+1. POE
+2. SVI
+3. DHCP
+4. VLAN Management
+5. MAC Learning
+
+~~ 
+
+Call manager
+
+1. IP Phones
+2. Analog Phones
+3. Incoming and Outgoing Calls
+3. Video Conferencing
+
+~~ 
+Firewall
+
+1. Traffic Filtering (ACLs, Policy Based Rules)
+2. Transport Security (S2S VPN, DMVPN, ZTNA)
+3. Threat Prevention (NGFW, IPS, Proxy)
+4. Network Segmentation/Isolation (Inside, Outside, DMZ)
+5. Monitoring, Logging, Alerts
+
+~~
+Edge Router
+1. Routing Static
+2. Routing OSPF
+3. Routing EIGRP
+4. Routing BGP
+5. VPN
+
+~~
+SR - Show Run
+SS- Show Start
+CRS - Copy Run Start
