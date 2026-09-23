@@ -104,3 +104,4 @@ SLD = RECORDS
 Apen Record/ Root Record - netplus52.com
 Web - www
 NameServer - ns1,ns2
+pkcs10 or csr
