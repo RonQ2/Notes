@@ -23,20 +23,20 @@ next
 
 IP Phones
 
-1. PoE
+1. PoE (802.3af, at, bt)
 2. MAC Address (show mac address-table)
 3. IP Address (DHCP Server)
-4. UDP 69 (tftp), TCO 2000 (skinny), TCP 5060 (SIP)
-5. UDP RTP
+4. UDP 69 (tftp), TCP 2000 (skinny), TCP 5060 (SIP)
+5. TCP/UDP RTP
 6. Codec g711, g729 | h323 video
-7. CME
+7. CME/Application
 
 ~~~~~~
 
 Switch
 
-1. POE
-2. SVI
+1. POE 
+2. SVI 
 3. DHCP
 4. VLAN Management
 5. MAC Learning
@@ -71,3 +71,36 @@ Edge Router
 SR - Show Run
 SS- Show Start
 CRS - Copy Run Start
+
+~~
+D-iscover
+O-ffer
+R-eceived
+A-ck
+
+~~
+7. Application Layer - Data
+6. Presentation Later - Data
+5. Session Later - Data Stream
+4. Transport Layer - Segment
+3. Network Later - Packets
+2. Data Link Layer - Frames
+1. Physical Layer - Bits
+
+From Physical Layer (bits) - Application Layer (Bytes)
+
+~~
+C-onfidentiality
+I-ntegrity (Code Signing, Crypto Checksum, Merkle Trees)
+A-vailability (Load Balancing, Failover, Backup(RAID), Rate Limiting / DDoS Protection, CDN (Content Delivery Networn))
+
+~~
+
+ROOT = TLD Server
+TLD = SLD SERVER
+SLD = RECORDS
+
+~~
+Apen Record/ Root Record - netplus52.com
+Web - www
+NameServer - ns1,ns2
