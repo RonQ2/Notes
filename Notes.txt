@@ -105,3 +105,37 @@ Apen Record/ Root Record - netplus52.com
 Web - www
 NameServer - ns1,ns2
 pkcs10 or csr
+~~~~
+IPv4 Subnetting
+
+design a network for Accenture.com with 1750 agents, team leads, project managers.using 10.0.0.0 /8 address space
+
+Convert: 			1750 = 11 bits
+Subtract: 			/32 - 11 bits = /21 network bits
+
+				- 10.0.0.0 /21 (3rd, 8i)
+Ipasok i sa octet: 		- 10.0.8.0
+
+
+
+Network ni Accenture.com:	- 10.0.0.0 /21
+	First Valid IP:		- 10.0.0.1
+	Last Valid IP:		- 10.0.7.254
+	Broadcast: 		- 10.0.7.255
+
+Not Network ni Accenture.com:	- 10.0.8.0 /?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Design a network for bdo.com with 777 pcs. using the 172.16.64.0/20 available address space.
+configure c1 as a DHCP server and S1 as a DHCP client for BDO
+-Reserve 20 IP addresses
+-Assign bdo to VLAN 69
+Convert- 777 = 10 bits
+subtract /32 -10 bits = /22
+ipasok sa i sa octet: /22 (3rd octet, 4i)
+
+Network: 172.16.64.0/22
+
+FIP (+1 Net)   172.16.64.1 /22
+LIP (-1 Broad ) 172.16.67.254 /22
+B  (-1 Not) 172.16.67.255 /22
+not  172.16.68.0 /?
