@@ -139,3 +139,126 @@ FIP (+1 Net)   172.16.64.1 /22
 LIP (-1 Broad ) 172.16.67.254 /22
 B  (-1 Not) 172.16.67.255 /22
 not  172.16.68.0 /?
+~~~~~
+IPv4 Subnetting
+
+task 1
+
+design a network for Accenture.com with 1750 agents, team leads, project managers.using 10.0.0.0 /8 address space
+
+Convert: 			1750 = 11 bits
+Subtract: 			/32 - 11 bits = /21 network bits
+
+				- 10.0.0.0 /21 (3rd, 8i)
+Ipasok i sa octet: 		- 10.0.8.0
+
+
+
+Network ni Accenture.com:	- 10.0.0.0 /21
+	First Valid IP:		- 10.0.0.1
+	Last Valid IP:		- 10.0.7.254
+	Broadcast: 		- 10.0.7.255
+
+Not Network ni Accenture.com:	- 10.0.8.0 /?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Design a network for bdo.com with 777 pcs. using the 172.16.64.0/20 available address space.
+configure c1 as a DHCP server and S1 as a DHCP client for BDO
+-Reserve 20 IP addresses
+-Assign bdo to VLAN 69
+Convert- 777 = 10 bits
+subtract /32 -10 bits = /22
+ipasok sa i sa octet: /22 (3rd octet, 4i)
+
+Network: 172.16.64.0/22
+
+FIP (+1 Net)   172.16.64.1 /22
+LIP (-1 Broad ) 172.16.67.254 /22
+B  (-1 Not) 172.16.67.255 /22
+not  172.16.68.0 /?
+
+
+````
+VLSM
+
+Design a network for BCLO.com with the following
+-Admin Dept: 123 Host
+- FIN Dept: 69 host
+- Guest: 1800 host
+
+use the available ip address soace 10.40.0.0/16
+
+
+- Admin Dept: 10.40.8.0 /25
+- FIN Dept: 10.40.8.128 /25
+- Guest: 10.40.0.0 /21
+
+guest:
+1800 host = 11 BITS
+/32 - 11 = /21
+
+= 10.40.0.0 /21 (3rd,8i)
+
+not= 10.40.8.0 /?
+
+admin
+123 host = 7 bits
+/32 - 7 bits = /25 (4th,128i)
+
+= 10.40.8.0 /25
+
+not
+
+Fin
+69 host = 7 bits
+/32 - 7 bits = /25 (4th, 8i)
+
+= 10.40.8.128 /?
+
+
+
+
+
+
+
+finding the network
+
+
+3. 172.16.1.214 /25
+4. 192.168.55.137 /22
+
+
+3. Step 1 (Octet &i)
+
+-172.16.1.214 /25
+-4th octet, 128i
+-172.16.1.128 /25
+~~~~~~~~~~~~~~~~
+-192.168.55.137 /22
+-3rd octet, 4i
+-192.168.52.137
+
+~~~~~
+Static Route
+1. Destination
+2. SubnetMask
+3. Next-Hop / Exit interface
+~~~~
+
+Host Static route
+!@R1
+conf t
+ip route 10.1.1.5 255.255.255.255 10.1.1.2
+end
+ping 10.1.1.5
+
+!@R3
+conf t
+ip route 10.1.1.6 255.255.255.255 10.1.1.5
+end
+ping 10.1.1.5
+
+!@R1
+conf t
+ip route 2.2.2.2 255.255.255.255 10.1.1.2
+end
+ping 2.2.2.2
